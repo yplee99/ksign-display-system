@@ -2,6 +2,7 @@
 
 import { ChevronDown, UserCircle2 } from "lucide-react";
 import { useState } from "react";
+import Link from "next/link";
 import clsx from "clsx";
 
 /* 대시보드 상단 우측 프로필 메뉴 */
@@ -52,9 +53,10 @@ export default function TopBar() {
               aria-hidden="true"
             />
             <div className="absolute right-0 mt-1 w-44 bg-white border border-gray-200 rounded-lg shadow-lg z-20 py-1 text-[13px]">
-              <button className="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-50 flex items-center gap-2">
+              <Link href="/profile" onClick={() => setOpen(false)}
+                className="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-50 flex items-center gap-2">
                 Profiles
-              </button>
+              </Link>
               <button className="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-50 flex items-center gap-2">
                 Release notes
               </button>
@@ -62,9 +64,10 @@ export default function TopBar() {
                 Vmotion Cloud Training
               </button>
               <hr className="my-1 border-gray-100" />
-              <button className="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-50 flex items-center gap-2">
+              <Link href="/login" onClick={() => setOpen(false)}
+                className="w-full text-left px-4 py-2 text-red-500 hover:bg-gray-50 flex items-center gap-2">
                 Logout
-              </button>
+              </Link>
             </div>
           </>
         )}

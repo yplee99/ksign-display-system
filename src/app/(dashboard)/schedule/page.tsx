@@ -1,5 +1,5 @@
 ﻿"use client";
-import { Trash2, Plus } from "lucide-react";
+import Link from "next/link"; import { Trash2, Plus } from "lucide-react";
 import clsx from "clsx";
 import PageHeader from "@/components/layout/PageHeader";
 import Button from "@/components/ui/Button";
@@ -24,7 +24,7 @@ export default function SchedulePage() {
           </tr></thead>
           <tbody>{SCHEDULES.map((s) => (
             <tr key={s.id} className="border-b border-gray-50 hover:bg-gray-50 transition-colors">
-              <td className="px-4 py-3"><span className="text-primary hover:underline cursor-pointer">{s.name}</span></td>
+              <td className="px-4 py-3"><Link href={"/schedule/" + s.id} className="text-primary hover:underline">{s.name}</Link></td>
               <td className={clsx("px-4 py-3", STATUS_STYLE[s.status])}>{s.status}</td>
               <td className="px-4 py-3 text-gray-500">{s.validFrom}</td>
               <td className="px-4 py-3 text-gray-500">{s.validUntil}</td>
@@ -38,3 +38,4 @@ export default function SchedulePage() {
     </div>
   );
 }
+

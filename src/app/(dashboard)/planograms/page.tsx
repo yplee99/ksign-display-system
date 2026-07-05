@@ -1,6 +1,7 @@
 ﻿"use client";
 import { useState } from "react";
 import { Star, Pencil, Copy, Trash2, Video, Plus, SlidersHorizontal, LayoutGrid, List, Search } from "lucide-react";
+import Link from "next/link";
 import PageHeader from "@/components/layout/PageHeader";
 import Button from "@/components/ui/Button";
 import { PLANOGRAMS, Planogram } from "@/data/dummy/planograms";
@@ -35,7 +36,7 @@ function PlanogramCard({ p }: { p: Planogram }) {
           <Star size={14} fill={p.isFavorite ? "currentColor" : "none"} />
         </button>
         <div className="flex items-center gap-2">
-          <button className="text-gray-300 hover:text-gray-600 transition-colors"><Pencil size={13} /></button>
+          <Link href={"/planograms/" + p.id + "/edit"} className="text-gray-300 hover:text-primary transition-colors"><Pencil size={13} /></Link>
           <button className="text-gray-300 hover:text-gray-600 transition-colors"><Copy size={13} /></button>
           <button className="text-gray-300 hover:text-red-500 transition-colors"><Trash2 size={13} /></button>
         </div>

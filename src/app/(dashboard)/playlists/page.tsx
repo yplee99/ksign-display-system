@@ -1,6 +1,6 @@
 ﻿"use client";
 import { useState } from "react";
-import { Copy, Trash2, Plus } from "lucide-react";
+import Link from "next/link"; import { Copy, Trash2, Plus } from "lucide-react";
 import PageHeader from "@/components/layout/PageHeader";
 import Button from "@/components/ui/Button";
 import SearchInput from "@/components/ui/SearchInput";
@@ -44,7 +44,7 @@ export default function PlaylistsPage() {
                 <tr><td colSpan={5} className="px-4 py-8 text-center text-gray-400">No playlists found</td></tr>
               ) : filtered.map((p) => (
                 <tr key={p.id} className="border-b border-gray-50 hover:bg-gray-50 transition-colors">
-                  <td className="px-4 py-3"><span className="text-primary hover:underline cursor-pointer">{p.name}</span></td>
+                  <td className="px-4 py-3"><Link href={"/playlists/" + p.id} className="text-primary hover:underline">{p.name}</Link></td>
                   <td className="px-4 py-3 text-gray-500">{p.usedIn ? p.usedIn + " ▾" : "-"}</td>
                   <td className="px-4 py-3 text-gray-500">{p.createdAt}</td>
                   <td className="px-4 py-3 text-center"><button className="text-gray-400 hover:text-gray-700"><Copy size={14} /></button></td>
@@ -77,3 +77,4 @@ export default function PlaylistsPage() {
     </div>
   );
 }
+
