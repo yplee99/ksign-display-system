@@ -72,8 +72,34 @@ BD Rowa™ Vmotion 시스템을 참조하여 개발하는 **AI 기반 디지털 
 
 Vmotion Cloud에서 변경 후 화면에 반영되기까지 약 **5분** 소요.
 
+## 프론트엔드 기술 스택 (확정)
+
+| 영역 | 기술 |
+|------|------|
+| 프레임워크 | Next.js 14 (App Router) |
+| 언어 | TypeScript |
+| 스타일링 | Tailwind CSS |
+| 상태관리 | Zustand (전역) + React Query (서버 상태) |
+| 폼 관리 | React Hook Form + Zod |
+| 아이콘 | Lucide React |
+| UI 컴포넌트 | 직접 구현 (shadcn/ui 참조) |
+| 3D 렌더링 | Three.js (Phase 4) |
+
+## 프론트엔드 코딩 규칙
+
+- 컴포넌트는 `src/components/` 하위에 기능별 폴더로 분류
+- 페이지는 `src/app/` (Next.js App Router 구조)
+- 공통 UI는 `src/components/ui/` 에 위치
+- 더미 데이터는 `src/data/` 에 위치
+- 모든 컴포넌트는 TypeScript interface로 props 정의
+- CSS 클래스는 Tailwind CSS만 사용 (인라인 스타일 금지)
+- 반응형: mobile(< 768px) → tablet(768~1024px) → desktop(> 1024px)
+- 디자인 참조 이미지: `/design/*.png`
+- UI 상세 스펙: `ui-spec.md` 참조
+
 ## 개발 시 주의사항
 
 - 모든 주석·설명은 **한글**로 작성 (코드 식별자 제외)
 - PDF 참고 문서는 `.gitignore`에 의해 GitHub에 업로드되지 않음
-- 현재 단계: **코딩 미착수 (기획 단계)**
+- 현재 단계: **프론트엔드 UI 컴포넌트 구현 준비 중**
+- 디자인 확정본: `/design/` 폴더의 PNG 파일들
