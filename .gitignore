@@ -1,2 +1,29 @@
-# PDF files
+# PDF 참고 문서
 *.pdf
+
+# Node.js
+node_modules/
+.npm
+
+# Next.js
+.next/
+out/
+
+# 환경 변수
+.env
+.env.local
+.env.*.local
+
+# 빌드 아티팩트
+dist/
+build/
+tsconfig.tsbuildinfo
+next-env.d.ts
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
